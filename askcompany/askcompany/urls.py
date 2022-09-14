@@ -23,3 +23,4 @@ urlpatterns = [
 ]
 
 #추가했어
+#ddd
