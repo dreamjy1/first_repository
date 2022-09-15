@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="UTF-8">
 <head>
+    <meta name="Keywords" content="url">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content=" 세상 굴레와 속박을 벗어던지는 행복한 커뮤니티 " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Not yet dao탈중앙화된 자율조직</title>
 </head>
 <body>
 
     <h1>h1</h1>
     {% for post in post_list%}
-  
-        {{ post.title }}
+    <ul>
+        <li>
+            {{ post.title }}
+        </li>
+        <li>
+            {{ post.content }}
+        </li>
+        <li>
+            {{ post.create_at }}
+        </li>
+
+
+    </ul>    
+    
+        
  
     
     {% endfor %}
