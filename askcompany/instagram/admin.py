@@ -2,7 +2,7 @@
 from django.contrib import admin
 from .models import Post
 # Register your models here.
-
+from django.utils.safestring import mark_safe
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -12,7 +12,7 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['message']
     def photo_tag(self,post):
         if post.photo:
-            return f'<img src="{post.photo.url}"/>'
+            return mark_safe(f'<img src="{post.photo.url}" style="width:83px;"/>')
         return None
     def message_length(self,post):
         return len(post.message)

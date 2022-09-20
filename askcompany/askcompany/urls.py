@@ -25,7 +25,7 @@ class RootView(TemplateView):
 urlpatterns = [
     path('' , TemplateView.as_view(template_name='root.html'),name='root'),
     
-    path('honeypot/',include('admin_honeypot.urls', namespace = 'admin_honeypot')), 
+    # path('honeypot/',include('admin_honeypot.urls', namespace = 'admin_honeypot')), 
     path('admin/' , admin.site.urls),
     path('blog1/' , include('blog1.urls')),
     path('instagram/' , include('instagram.urls')),
