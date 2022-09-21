@@ -1,4 +1,4 @@
-from pyexpat import model
+
 from django.db import models
 
 # Create your models here.
@@ -14,6 +14,15 @@ class Post(models.Model):
     def __str__(self):
         # return f"cu stom Post objects({self.id})"
         return self.message
+    
+    class Meta:
+        ordering =['-id']
     # def message_length(self):
     #     return len(self.message)
     # message_length.short_description ="메세지 글자수"
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    message=models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
