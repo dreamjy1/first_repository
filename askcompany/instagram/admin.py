@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from .models import Post
+from .models import Post , Comment
 # Register your models here.
 from django.utils.safestring import mark_safe
 
@@ -17,3 +17,8 @@ class PostAdmin(admin.ModelAdmin):
     def message_length(self,post):
         return len(post.message)
     message_length.short_description = "메세지 글자수"
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass
