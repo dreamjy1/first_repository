@@ -1,3 +1,5 @@
 django ~= 3.2.15
 pillow
 django-admin-honeypot
+django-extensions
+django-bootstrap4

@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView ,RedirectView
 from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
@@ -23,7 +23,11 @@ class RootView(TemplateView):
     template_name = 'root.html'
 
 urlpatterns = [
-    path('' , TemplateView.as_view(template_name='root.html'),name='root'),
+    # path('' , TemplateView.as_view(template_name='root.html'),name='root'),
+    path('' , RedirectView.as_view(
+        # url='/instagram/'
+        pattern_name='instagram:post_list'
+        ),name='root'),
     
     # path('honeypot/',include('admin_honeypot.urls', namespace = 'admin_honeypot')), 
     path('admin/' , admin.site.urls),

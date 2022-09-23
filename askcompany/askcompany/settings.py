@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'blog1',
     'instagram',
     'accounts',
+    'bootstrap4'
   
 ]
 
