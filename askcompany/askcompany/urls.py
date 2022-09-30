@@ -25,8 +25,8 @@ class RootView(TemplateView):
 urlpatterns = [
     # path('' , TemplateView.as_view(template_name='root.html'),name='root'),
     path('' , RedirectView.as_view(
-        # url='/instagram/'
-        pattern_name='instagram:post_list'
+        url='/instagram/'
+
         ),name='root'),
     
     # path('honeypot/',include('admin_honeypot.urls', namespace = 'admin_honeypot')), 
